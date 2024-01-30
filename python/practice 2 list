@@ -1,0 +1,57 @@
+student = ["John", "Jason", "James", "Jane"]
+print(len(student))
+print(student[1])
+print(student[-2])
+print(student[1:3])
+print("/".join(student))
+
+
+Date = "25/1/2024"
+print (Date.split("/"))
+
+
+student = ["John", "Jason", "James", "Jane"]
+student.extend(["Ann","Anna"])
+print(student)
+
+student = ["John", "Jason", "James", "Jane"]
+student.remove("John")
+print(student)
+
+student = ["John", "Jason", "James", "Jane"]
+student.pop(1)
+print(student) 
+
+student = ["John", "Jason", "James", "Jane"]
+print(student.index("James"))
+
+
+scoresheet = ["John",82, "Jason",98, "James",89, "Jane", 96]
+action = input("(A)enquiry (B)add (C)delete (D)Edit:").upper()
+if action =="A":
+    name = input("enquiry:")
+    if name not in scoresheet:
+        print("No such person")
+    else:
+        order = scoresheet.index(name)
+        print(f"{name}is scoring {scoresheet[order+1]}")
+
+elif action == "B":
+    studentdetail = input("please add your name and result:")
+    scoresheet.extend(studentdetail.split("/"))
+    print("result is added")
+    print(f"number of students registered {int(len(scoresheet)/2)}")
+
+elif action == "C":
+    name = input("please enter the name that to be deleted:")
+    place= scoresheet.index(name)
+    scoresheet.pop(place)
+    scoresheet.pop(place)
+    print(scoresheet)
+
+elif action == "D":
+    name = input("please enter the name:")
+    result = input(" please input your result:")
+    place=scoresheet.index(name)
+    scoresheet[place+1]=result
+    print(scoresheet)
